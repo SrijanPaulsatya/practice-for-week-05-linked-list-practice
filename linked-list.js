@@ -15,16 +15,10 @@ class LinkedList {
   addToHead(val) {
     // Your code here
     const newNode = new LinkedListNode(val);
+
+    newNode.next = this.head;
+    this.head = newNode;
     this.length++;
-
-    if (!this.head) {
-      this.head = newNode;
-    }
-    else {
-      newNode.next = this.head;
-      this.head = newNode;
-    }
-
   }
 
   addToTail(val) {
